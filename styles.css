@@ -1,0 +1,48 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    height: 100%;
+    background-image: url("assets/BG_IMG.svg");  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar-brand{
+    font-weight: 700;
+}
+
+.main-card{
+    height: 75vh;   
+    background-color: #202020; 
+}
+
+#symptomPillsContainer{
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pill{
+    border: solid 2px #44CF6C;
+    border-radius: 5px;
+    display: inline;
+    padding: 5px;
+    margin: 1px;
+}
+
+.card-body{
+    padding: auto;
+}
+
+.result{
+    display: none;
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+}

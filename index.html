@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Symptom Checker APP</title>
+  </head>
+
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1"
+          ><span style="color: #44cf6c">SYMPTOM</span> CHECKER</span
+        >
+      </div>
+    </nav>
+
+    <div class="container-fluid mt-3">
+      <div class="row ms-2 me-2">
+        <div class="card main-card col-xs-12 col-sm-9">
+          <div class="card-body">
+            <p class="text-light">
+              Tell us your symptoms so that we can identify the cause.
+            </p>
+            <div style="color: #44cf6c; font-size: 1.5rem">Select symptoms</div>
+
+            <form onsubmit="addPill(event)">
+              <div class="row mt-3 pe-4">
+                <div class="col-8">
+                  <input
+                    class="form-control"
+                    id="input"
+                    list="data-list"
+                    required
+                  />
+                </div>
+                <div class="col-4 d-flex flex-lg-row gap-3 flex-wrap">
+                  <button
+                    type="submit"
+                    class="btn btn-primary w-100"
+                    style="max-width: 70px"
+                  >
+                    Add
+                  </button>
+                  <button
+                    type="button"
+                    onclick="clearPills(event)"
+                    class="btn btn-danger w-100"
+                    style="max-width: 70px"
+                  >
+                    Clear
+                  </button>
+                </div>
+              </div>
+              <datalist id="data-list"> </datalist>
+            </form>
+
+            <div class="text-light mt-2 p-2" id="symptomPillsContainer"></div>
+
+            <button
+              type="button"
+              onclick="diagnose()"
+              class="btn btn-success mt-3"
+            >
+              Diagnose
+            </button>
+
+            <div class="card result flex-column bg-success p-3">
+              <div class="card-title h5 text-dark"><b>Here's your Diagnosis</b></div>
+              <p class="text-light">You might be suffering from:</p>
+              <div class="text-warning" id="final_prediction"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
